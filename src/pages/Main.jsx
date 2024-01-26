@@ -17,7 +17,7 @@ export default function Main() {
                 <div className="flex justify-between px-1 gap-1">
                 <NavLink to="/menu"><button className=" bg-[#496174] hover:bg-gray-400 p-3 rounded-3xl text-white  ">Menu</button></NavLink>
                 <NavLink to="/menu"><button className=" bg-[#496174] hover:bg-gray-400 p-3 rounded-3xl text-white ">Instagram</button></NavLink>
-                <NavLink to="/menu"><button className=" bg-[#496174] hover:bg-gray-400 p-3 rounded-3xl text-white  ">Hakkımızda</button></NavLink>
+                <NavLink to="/hakkimizda"><button className=" bg-[#496174] hover:bg-gray-400 p-3 rounded-3xl text-white  ">Hakkımızda</button></NavLink>
                 <NavLink to="/menu"><button className=" bg-[#496174] hover:bg-gray-400 p-3 rounded-3xl text-white  ">İletisim</button></NavLink>
             
                 </div>

@@ -6,6 +6,7 @@ import Main from './pages/Main'
 import Login from './pages/Login'
 import Menu from './pages/Menu.jsx'
 import Siparis from './pages/Siparis.jsx/'
+import Hakkimizda from './pages/Hakkimizda.jsx/'
 import Coffee from './pages/Coffee.jsx/'
 import MenuListItem from './pages/MenuListItem.jsx/'
 import NotFound from './pages/NotFound.jsx/'
@@ -23,6 +24,9 @@ function App() {
         </Route>
         <Route path="/Login" exact>
           <Login />
+        </Route>
+        <Route path="/Hakkimizda" exact>
+          <Hakkimizda />
         </Route>
         <Route path="/Menu" exact>
           <Menu />
