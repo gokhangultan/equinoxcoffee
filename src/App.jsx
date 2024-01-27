@@ -4,6 +4,7 @@ import { Switch } from 'react-router-dom'
 import { Route } from 'react-router-dom/cjs/react-router-dom.min'
 import Main from './pages/Main'
 import Login from './pages/Login'
+import İletisim from './pages/İletisim'
 import Menu from './pages/Menu.jsx'
 import Siparis from './pages/Siparis.jsx/'
 import Hakkimizda from './pages/Hakkimizda.jsx/'
@@ -24,6 +25,9 @@ function App() {
         </Route>
         <Route path="/Login" exact>
           <Login />
+        </Route>
+        <Route path="/iletisim" exact>
+          <İletisim />
         </Route>
         <Route path="/Hakkimizda" exact>
           <Hakkimizda />
