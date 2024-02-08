@@ -9,7 +9,7 @@ export default function Hakkimizda() {
         <span className="flex text-xs">3rd wave coffee shop</span>
         <span className="flex-2">Çalışma Saatlerimiz: 10:00 - 22:00</span>
         </header>
-                <img src="instagram.png" className="w-64 p-0 m-auto rounded-full mt-3" />
+                <img src="instagram.png" className="w-24 p-0 m-auto rounded-full mt-3" />
         <h1 className=" p-2 text-center font-['Open_Sans'] text-2xl font-bold text-black m-auto pt-2 pb-0">Welcome Equinox Coffee Co.</h1>
         <div className="flex  px-1 gap-1">
 <img src="eq1.jpg" className="w-700 p-0 m-auto max-h-[674px] object-cover px-2 rounded-xl" />
