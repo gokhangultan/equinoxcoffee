@@ -18,7 +18,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
 
   return (
-    <>
+    <div className='bg-slate-800'>
       <Switch>
         <Route path="/" exact>
           <Main />
@@ -48,7 +48,7 @@ function App() {
           <NotFound />
         </Route>
       </Switch>
-    </>
+    </div>
   )
 }
 
