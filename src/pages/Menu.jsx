@@ -25,113 +25,113 @@ const Menu = () => {
         <table className="w-full text-white ">
           <thead className='bg-gray-500'>
             <tr>
-              <th className="px-5 py-3">3rd Vawe</th>
-              <th className="px-5 py-3">Price</th>
-              <th className="px-5 py-3">Type</th>
+              <th className="px-2.5 py-2.5">3rd Vawe</th>
+              <th className="px-2.5 py-2.5">Price</th>
+              <th className="px-2.5 py-2.5">Type</th>
             </tr>
           </thead>
           <tbody>
             {thirdWaveArray.map((item, index) => (
               <tr key={index}>
-                <td className="px-5 py-3">{item.name}</td>
-                <td className="px-5 py-3">{item.price}</td>
-                <td className="px-5 py-3">{item.type}</td>
+                <td className="px-2.5 py-2.5">{item.name}</td>
+                <td className="px-2.5 py-2.5">{item.price}</td>
+                <td className="px-2.5 py-2.5">{item.type}</td>
               </tr>
             ))}
           </tbody>
           <thead className='bg-gray-500'>
             <tr>
-              <th className="px-5 py-3">Espresso</th>
-              <th className="px-5 py-3">Price</th>
-              <th className="px-5 py-3">Type</th>
+              <th className="px-2.5 py-2.5">Espresso</th>
+              <th className="px-2.5 py-2.5">Price</th>
+              <th className="px-2.5 py-2.5">Type</th>
             </tr>
           </thead>
           <tbody>
             {esprossoArray.map((item, index) => (
               <tr key={index}>
-                <td className="px-5 py-3">{item.name}</td>
-                <td className="px-5 py-3">{item.price}</td>
-                <td className="px-5 py-3">{item.type}</td>
+                <td className="px-2.5 py-2.5">{item.name}</td>
+                <td className="px-2.5 py-2.5">{item.price}</td>
+                <td className="px-2.5 py-2.5">{item.type}</td>
               </tr>
             ))}
           </tbody>
           <thead className='bg-gray-500'>
             <tr>
-              <th className="px-5 py-3">Cold Drinks</th>
-              <th className="px-5 py-3">Price</th>
-              <th className="px-5 py-3">Type</th>
+              <th className="px-2.5 py-2.5">Cold Drinks</th>
+              <th className="px-2.5 py-2.5">Price</th>
+              <th className="px-2.5 py-2.5">Type</th>
             </tr>
           </thead>
           <tbody>
             {coldArray.map((item, index) => (
               <tr key={index}>
-                <td className="px-5 py-3">{item.name}</td>
-                <td className="px-5 py-3">{item.price}</td>
-                <td className="px-5 py-3">{item.type}</td>
+                <td className="px-2.5 py-2.5">{item.name}</td>
+                <td className="px-2.5 py-2.5">{item.price}</td>
+                <td className="px-2.5 py-2.5">{item.type}</td>
               </tr>
             ))}
           </tbody>
           <thead className='bg-gray-500'>
             <tr>
-              <th className="px-5 py-3">Atıştırmalıklar</th>
-              <th className="px-5 py-3">Price</th>
-              <th className="px-5 py-3">Type</th>
+              <th className="px-2.5 py-2.5">Atıştırmalıklar</th>
+              <th className="px-2.5 py-2.5">Price</th>
+              <th className="px-2.5 py-2.5">Type</th>
             </tr>
           </thead>
           <tbody>
             {snacksArray.map((item, index) => (
               <tr key={index}>
-                <td className="px-5 py-3">{item.name}</td>
-                <td className="px-5 py-3">{item.price}</td>
-                <td className="px-5 py-3">{item.type}</td>
+                <td className="px-2.5 py-2.5">{item.name}</td>
+                <td className="px-2.5 py-2.5">{item.price}</td>
+                <td className="px-2.5 py-2.5">{item.type}</td>
               </tr>
             ))}
           </tbody>
           <thead className='bg-gray-500'>
             <tr>
-              <th className="px-5 py-3">Sıcak İçecekler</th>
-              <th className="px-5 py-3">Price</th>
-              <th className="px-5 py-3">Type</th>
+              <th className="px-2.5 py-2.5">Sıcak İçecekler</th>
+              <th className="px-2.5 py-2.5">Price</th>
+              <th className="px-2.5 py-2.5">Type</th>
             </tr>
           </thead>
           <tbody>
             {hotArray.map((item, index) => (
               <tr key={index}>
-                <td className="px-5 py-3">{item.name}</td>
-                <td className="px-5 py-3">{item.price}</td>
-                <td className="px-5 py-3">{item.type}</td>
+                <td className="px-2.5 py-2.5">{item.name}</td>
+                <td className="px-2.5 py-2.5">{item.price}</td>
+                <td className="px-2.5 py-2.5">{item.type}</td>
               </tr>
             ))}
           </tbody>
           <thead className='bg-gray-500'>
             <tr>
-              <th className="px-5 py-3">Soğuk Kahveler</th>
-              <th className="px-5 py-3">Price</th>
-              <th className="px-5 py-3">Type</th>
+              <th className="px-2.5 py-2.5">Soğuk Kahveler</th>
+              <th className="px-2.5 py-2.5">Price</th>
+              <th className="px-2.5 py-2.5">Type</th>
             </tr>
           </thead>
           <tbody>
             {coldCoffeeArray.map((item, index) => (
               <tr key={index}>
-                <td className="px-5 py-3">{item.name}</td>
-                <td className="px-5 py-3">{item.price}</td>
-                <td className="px-5 py-3">{item.type}</td>
+                <td className="px-2.5 py-2.5">{item.name}</td>
+                <td className="px-2.5 py-2.5">{item.price}</td>
+                <td className="px-2.5 py-2.5">{item.type}</td>
               </tr>
             ))}
           </tbody>
           <thead className='bg-gray-500'>
             <tr>
-              <th className="px-5 py-3">Aromatik Çaylar</th>
-              <th className="px-5 py-3">Price</th>
-              <th className="px-5 py-3">Type</th>
+              <th className="px-2.5 py-2.5">Aromatik Çaylar</th>
+              <th className="px-2.5 py-2.5">Price</th>
+              <th className="px-2.5 py-2.5">Type</th>
             </tr>
           </thead>
           <tbody>
             {aromaticArray.map((item, index) => (
               <tr key={index}>
-                <td className="px-5 py-3">{item.name}</td>
-                <td className="px-5 py-3">{item.price}</td>
-                <td className="px-5 py-3">{item.type}</td>
+                <td className="px-2.5 py-2.5">{item.name}</td>
+                <td className="px-2.5 py-2.5">{item.price}</td>
+                <td className="px-2.5 py-2.5">{item.type}</td>
               </tr>
             ))}
           </tbody>
