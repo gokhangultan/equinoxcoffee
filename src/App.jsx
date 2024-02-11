@@ -68,9 +68,7 @@ function App() {
         <Route path="/MenuListItem" exact>
           <MenuListItem />
         </Route>
-        <Route path="*">
-          <NotFound />
-        </Route>
+        
       </Switch>
     </div>
   )
