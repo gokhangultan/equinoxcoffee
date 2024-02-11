@@ -9,7 +9,7 @@ export default function Main() {
                 <span className="flex text-[14px]">3rd wave coffee shop</span>
                 <span className="flex-2 text-[14px]">Çalışma Saatlerimiz: 09:00 - 20:00</span>
                 </header>
-                <img src="instagram.png" className="w-28 p-0 m-auto rounded-full mt-3" />
+                <img src="instagram.png" className="w-28 p-0 m-auto rounded-full my-3" />
                 <h1 className=" p-2 text-center font-['Open_Sans'] text-3xl font-bold text-white mb-auto pt-1 pb-0">Welcome Equinox Coffee Co.</h1>
                 <div className="xl:m-5 lg:m-4 md:m-3 mb-1"><Slider /></div>
                 <div className="flex justify-around mr-2 ml-2"> 

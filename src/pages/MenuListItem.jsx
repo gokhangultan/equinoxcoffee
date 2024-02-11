@@ -18,11 +18,11 @@ const MenuListItem = (props) => {
 
   return (
     
-  <tr className='bg-[#496174]'  >
-      <td className='pl-4 text-white' >{title}</td>
-      <td className='pl-4 text-white'>{type}</td>
-      <td className='pl-4 text-white'>{price}</td>
-      <td className='p-2 flex gap-1'>
+  <tr className='bg-[#1e293b]'  >
+      <td className='pl-2 text-white' >{title}</td>
+      <td className='pl-2 text-white'>{type}</td>
+      <td className='pl-2 text-white'>{price}</td>
+      <td className='p-1 flex gap-1'>
         <Link to={`/menu/${id}`} className="myButton bg-blue-600 hover:bg-blue-500 p-3 rounded-3xl text-white" >
           Detay
         </Link>

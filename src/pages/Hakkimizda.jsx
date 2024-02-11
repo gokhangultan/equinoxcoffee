@@ -9,27 +9,26 @@ export default function Hakkimizda() {
                 <span className="flex text-[14px]">3rd wave coffee shop</span>
                 <span className="flex-2 text-[14px]">Çalışma Saatlerimiz: 09:00 - 20:00</span>
                 </header>
-        <Link to="/"><img src="instagram.png" className="w-28 p-0 m-auto rounded-full mt-3" />
-        <h1 className=" p-2 text-center font-['Open_Sans'] text-2xl font-bold text-black m-auto mt-1 mb-1">Welcome Equinox Coffee Co.</h1></Link>
+        <Link to="/"><img src="instagram.png" className="w-28 p-0 m-auto rounded-full my-3" /></Link>
+        
         <div className="flex  px-1 gap-1">
-<img src="eq1.jpg" className="w-700 m-auto max-h-[674px] object-cover px-3 rounded-3xl" />
-
+            <img src="eq1.jpg" className="w-700 m-auto max-h-[674px] object-cover px-3 rounded-3xl" />
         </div>
-        <div className="px-1 m-4" >
-        <h2 className="p-0 font-['Open_Sans'] text-3xl font-bold text-black m-auto mt-2 pb-0">Equinox Coffee Co Kimdir?</h2>
+        <h2 className="px-1 m-4 font-['Open_Sans'] text-3xl font-bold text-black ">Equinox Coffee Kimdir?</h2>
+        <div className="px-1 m-4 flex-col justify-between" >
         <p className="font-['Open_Sans']">
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        Merhaba! Biz Equinox Coffee, 21 Mart'ta Alsancak'ta açılışımızı yaptık ve kahve severler için bir buluşma noktası olmayı hedefliyoruz. İsmimiz, açılış tarihimizin bahar ekinoksuna denk gelmesinden ilham alarak belirlendi. Equinox, bizim için denge, huzur ve eşitlik demek!
 </p>
 <p className="font-['Open_Sans']">
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+Alsancak'ta bulunan kafemizde, sadece kahve değil, aynı zamanda dostluklar ve keyif dolu anlar bulacaksınız. Espresso bazlı kahvelerimiz, üçüncü nesil demlemelerimiz ve dünya çaylarımızla her damak tadına hitap ediyoruz. Yanında tercih edebileceğiniz ev yapımı atıştırmalıklarımız da cabası!
+
 </p>
-<h2 className="p-0 font-['Open_Sans'] text-3xl font-bold text-black m-auto mt-2 pb-0">Biz Kimiz?</h2>
 <p className="font-['Open_Sans']">
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+İç mekanımızda, sıcaklığı ve huzuru hissedeceğiniz bir atmosfer yarattık. Bitkilerle dolu dekorasyonumuz ve seçtiğimiz kaliteli müziklerle sizi evinizde gibi hissettirmek istiyoruz. Ayrıca, sevimli dostlarınızı da yanınıza almayı unutmayın; çünkü Equinox, evcil hayvan dostu bir mekan!
 </p>
-<p className="font-['Open_Sans']" >
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-</p>
+<p className="font-['Open_Sans'] pb-10" >
+Equinox Coffee olarak, kahve tutkumuzu ve samimiyetimizi her fincanda paylaşmayı dört gözle bekliyoruz. Sizleri kahvemiz ve sıcak sohbetimizle tanışmaya davet ediyoruz. Gelin, birlikte güzel anlar yaşayalım!</p>
 </div>
 
     </div>

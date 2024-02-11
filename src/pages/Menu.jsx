@@ -1,34 +1,143 @@
 import React from 'react';
-
-import MenuListItem from './MenuListItem';
-
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
-const Menu = (props) => {
-  const coffees = useSelector((store) => store.coffeeReducer.coffees);
+const Menu = () => {
+  const data = useSelector((store) => store.coffeeReducer.data );
+  const thirdWaveArray = data["3rdvawe"];
+  const esprossoArray = data["espresso"];
+  const coldArray = data["cold"];
+  const snacksArray = data["snacks"];
+  const hotArray = data["hot"];
+  const coldCoffeeArray = data["coldcoffee"];
+  const aromaticArray = data["aromatic"];
 
   return (
-    <div className="flex-1 " >
-      <div className="overflow-hidden bg-[#496174] rounded-md shadow mb-4 sm:min-h-[600px]">
-        <table className="table-auto border-collapse text-left w-full">
-          <thead>
-            <tr className="border-zinc-200 border-b bg-gray-700 text-white " >
-              <th className="pl-4 ">Coffee</th>
-              <th className="pl-4">Coffee Type</th>
-              <th className="pl-4">Price</th>
-              <th className="pl-2">Product Detail</th>
-              <th></th>
+    <div className="flex-1 m-auto">
+      <div className="overflow-hidden rounded-md shadow mb-4 sm:min-h-[600px] m-auto">
+        <header className="bg-black flex justify-between mx-auto px-2 text-white">
+          <span className="flex text-[14px]">3rd wave coffee shop</span>
+          <span className="flex-2 text-[14px]">Çalışma Saatlerimiz: 09:00 - 20:00</span>
+        </header>
+        <Link to="/">
+          <img src="instagram.png" className="w-28 p-0 m-auto rounded-full mt-2 mb-2" />
+        </Link>
+        <table className="w-full text-white ">
+          <thead className='bg-gray-500'>
+            <tr>
+              <th className="px-5 py-3">3rd Vawe</th>
+              <th className="px-5 py-3">Price</th>
+              <th className="px-5 py-3">Type</th>
             </tr>
           </thead>
-
-          <tbody className="text-sm">
-            {coffees.map((coffee) => (
-              <MenuListItem key={coffee.id} coffee={coffee} />
+          <tbody>
+            {thirdWaveArray.map((item, index) => (
+              <tr key={index}>
+                <td className="px-5 py-3">{item.name}</td>
+                <td className="px-5 py-3">{item.price}</td>
+                <td className="px-5 py-3">{item.type}</td>
+              </tr>
             ))}
           </tbody>
+          <thead className='bg-gray-500'>
+            <tr>
+              <th className="px-5 py-3">Espresso</th>
+              <th className="px-5 py-3">Price</th>
+              <th className="px-5 py-3">Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            {esprossoArray.map((item, index) => (
+              <tr key={index}>
+                <td className="px-5 py-3">{item.name}</td>
+                <td className="px-5 py-3">{item.price}</td>
+                <td className="px-5 py-3">{item.type}</td>
+              </tr>
+            ))}
+          </tbody>
+          <thead className='bg-gray-500'>
+            <tr>
+              <th className="px-5 py-3">Cold Drinks</th>
+              <th className="px-5 py-3">Price</th>
+              <th className="px-5 py-3">Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            {coldArray.map((item, index) => (
+              <tr key={index}>
+                <td className="px-5 py-3">{item.name}</td>
+                <td className="px-5 py-3">{item.price}</td>
+                <td className="px-5 py-3">{item.type}</td>
+              </tr>
+            ))}
+          </tbody>
+          <thead className='bg-gray-500'>
+            <tr>
+              <th className="px-5 py-3">Atıştırmalıklar</th>
+              <th className="px-5 py-3">Price</th>
+              <th className="px-5 py-3">Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            {snacksArray.map((item, index) => (
+              <tr key={index}>
+                <td className="px-5 py-3">{item.name}</td>
+                <td className="px-5 py-3">{item.price}</td>
+                <td className="px-5 py-3">{item.type}</td>
+              </tr>
+            ))}
+          </tbody>
+          <thead className='bg-gray-500'>
+            <tr>
+              <th className="px-5 py-3">Sıcak İçecekler</th>
+              <th className="px-5 py-3">Price</th>
+              <th className="px-5 py-3">Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            {hotArray.map((item, index) => (
+              <tr key={index}>
+                <td className="px-5 py-3">{item.name}</td>
+                <td className="px-5 py-3">{item.price}</td>
+                <td className="px-5 py-3">{item.type}</td>
+              </tr>
+            ))}
+          </tbody>
+          <thead className='bg-gray-500'>
+            <tr>
+              <th className="px-5 py-3">Soğuk Kahveler</th>
+              <th className="px-5 py-3">Price</th>
+              <th className="px-5 py-3">Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            {coldCoffeeArray.map((item, index) => (
+              <tr key={index}>
+                <td className="px-5 py-3">{item.name}</td>
+                <td className="px-5 py-3">{item.price}</td>
+                <td className="px-5 py-3">{item.type}</td>
+              </tr>
+            ))}
+          </tbody>
+          <thead className='bg-gray-500'>
+            <tr>
+              <th className="px-5 py-3">Aromatik Çaylar</th>
+              <th className="px-5 py-3">Price</th>
+              <th className="px-5 py-3">Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            {aromaticArray.map((item, index) => (
+              <tr key={index}>
+                <td className="px-5 py-3">{item.name}</td>
+                <td className="px-5 py-3">{item.price}</td>
+                <td className="px-5 py-3">{item.type}</td>
+              </tr>
+            ))}
+          </tbody>
+          
         </table>
       </div>
-
     </div>
   );
 };

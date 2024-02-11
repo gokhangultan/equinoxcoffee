@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import { Switch } from 'react-router-dom'
 import { Route } from 'react-router-dom/cjs/react-router-dom.min'
@@ -12,15 +12,39 @@ import Coffee from './pages/Coffee.jsx/'
 import MenuListItem from './pages/MenuListItem.jsx/'
 import NotFound from './pages/NotFound.jsx/'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useDispatch } from 'react-redux'
+import axios from 'axios'
 
 
 
 function App() {
 
+  const dispatch = useDispatch();
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+     axios
+       .get("https://65c91b40a4fbc162e1129cfa.mockapi.io/api/v1/data")
+       
+
+       .then((res) => dispatch({
+        type: "SET_DATA",
+            payload: res.data[0],
+            
+       }))
+       .then((res)=>console.log(res))
+       .then(()=>setLoading(false))
+       .catch((err) => console.error(err));
+ 
+  },[]);
+
+  if(loading){
+    return <p>BEKLE BABBA...</p>
+  }
+
   return (
     <div className='bg-slate-800'>
       <Switch>
-        <Route path="/" exact>
+        <Route path="/" exact >
           <Main />
         </Route>
         <Route path="/Login" exact>

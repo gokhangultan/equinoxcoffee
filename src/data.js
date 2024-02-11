@@ -1,4 +1,4 @@
-let coffees = [
+let data = [
     {
       id: 0,
       title: "Americano",
@@ -36,5 +36,5 @@ let coffees = [
     
   ];
   
-  export default coffees;
+  export default data;
   
