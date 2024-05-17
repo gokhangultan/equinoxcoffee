@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { toast } from "react-toastify";
 import axios from "axios"; // Axios import
-import { addCoffee, fetchMenuData } from "../store/actions/coffeeActions"; // Ürün ekleme işlemi için gerekli action
+import { addCoffee, deleteCoffee, fetchMenuData } from "../store/actions/coffeeActions"; // Ürün ekleme işlemi için gerekli action
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -47,7 +47,7 @@ export default function Admin() {
     const deleteProduct = async (id) => {
         try {
             const response = await axios.delete(`https://6646fe9151e227f23ab09393.mockapi.io/api/v1/equinoxmenu/${id}`);
-            if (response && response.status === 200) {
+            if (response && response.status === 200 || response.status === 204) {
                 dispatch(deleteCoffee(id));
                 toast.success("Ürün başarıyla silindi!", {
                     position: "top-right",
@@ -65,7 +65,6 @@ export default function Admin() {
         }
     };
     
-
 
     return (
         <div className="my-20 px-[10px] lg:px-[250px]">
@@ -199,10 +198,6 @@ export default function Admin() {
                                             >
                                                 SİL
                                             </button>
-
-                        <button className="myButton bg-blue-600 hover:bg-blue-500 p-2 rounded-xl text-white">
-                          DÜZENLE
-                        </button>
                       </div>
                     </td>
                   </tr>

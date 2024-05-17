@@ -12,15 +12,17 @@ const reducer = (state = initialState, action) => {
     case DELETE_COFFEE:
       return {
         ...state,
-        data: state.data.filter((item) => action.payload !== item.id),
-        coffees: state.coffees.filter((item) => action.payload !== item.id),
+        data: [...state.data.filter((item) => action.payload !== item.id)],
+        coffees: [...state.coffees.filter((item) => action.payload !== item.id)],
       };
+      
     case ADD_COFFEE:
       return {
         ...state,
         data: [...state.data, action.payload],
         coffees: [...state.coffees, action.payload],
       };
+      
     case SET_DATA:
       return {
         ...state,
