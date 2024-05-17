@@ -1,16 +1,32 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { fetchMenuData } from '../store/actions/coffeeActions';
 
 const Menu = () => {
-  const data = useSelector((store) => store.coffeeReducer.data );
-  const thirdWaveArray = data["3rdvawe"];
-  const esprossoArray = data["espresso"];
-  const coldArray = data["cold"];
-  const snacksArray = data["snacks"];
-  const hotArray = data["hot"];
-  const coldCoffeeArray = data["coldcoffee"];
-  const aromaticArray = data["aromatic"];
+  const data = useSelector((store) => store.coffeeReducer.data);
+
+  const isArray = Array.isArray(data);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchMenuData());
+  }, [dispatch]);
+
+  let groupedData = {};
+
+  // Check if data is an array before grouping
+  if (isArray) {
+    // Group data by productType
+    groupedData = data.reduce((acc, item) => {
+      if (!acc[item.productType]) {
+        acc[item.productType] = [];
+      }
+      acc[item.productType].push(item);
+      return acc;
+    }, {});
+  }
 
   return (
     <div className="flex-1 m-auto">
@@ -20,123 +36,37 @@ const Menu = () => {
           <span className="flex-2 text-[14px]">Çalışma Saatlerimiz: 09:00 - 20:00</span>
         </header>
         <Link to="/">
-          <img src="instagram.png" className="w-28 p-0 m-auto rounded-full mt-2 mb-2" />
+          <img src="instagram.png" className="w-28 p-0 m-auto rounded-full mt-2 mb-2" alt="Instagram" />
         </Link>
-        <table className="w-full text-white ">
-          <thead className='bg-gray-500'>
-            <tr>
-              <th className="px-2.5 py-2.5">3rd Vawe</th>
-              <th className="px-2.5 py-2.5">Price</th>
-              <th className="px-2.5 py-2.5">Type</th>
+        {/* Map over each productType and render individual tables */}
+        {Object.entries(groupedData).map(([productType, products]) => (
+          <div key={productType} className="mb-4 p-2">
+            <h2 className="text-xl font-bold mb-2 text-white">{productType}</h2>
+            <table className="w-full text-white">
+    <thead className="bg-gray-500">
+        <tr>
+            <th className="px-2.5 py-2.5 w-1/4">Name</th>
+            <th className="px-2.5 py-2.5 w-3/4">Description</th>
+            <th className="px-2.5 py-2.5 w-1/12 text-right">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        {products.map((item, index) => (
+            <tr key={index}>
+                <td className="px-2.5 py-2.5 uppercase">{item.name}</td>
+                <td className="px-3.5 py-3.5 text-xs">{item.description}</td>
+                <td className="px-2.5 py-2.5 font-bold text-xl text-right">{item.price}₺</td>
             </tr>
-          </thead>
-          <tbody>
-            {thirdWaveArray.map((item, index) => (
-              <tr key={index}>
-                <td className="px-2.5 py-2.5">{item.name}</td>
-                <td className="px-2.5 py-2.5">{item.price}</td>
-                <td className="px-2.5 py-2.5">{item.type}</td>
-              </tr>
-            ))}
-          </tbody>
-          <thead className='bg-gray-500'>
-            <tr>
-              <th className="px-2.5 py-2.5">Espresso</th>
-              <th className="px-2.5 py-2.5">Price</th>
-              <th className="px-2.5 py-2.5">Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            {esprossoArray.map((item, index) => (
-              <tr key={index}>
-                <td className="px-2.5 py-2.5">{item.name}</td>
-                <td className="px-2.5 py-2.5">{item.price}</td>
-                <td className="px-2.5 py-2.5">{item.type}</td>
-              </tr>
-            ))}
-          </tbody>
-          <thead className='bg-gray-500'>
-            <tr>
-              <th className="px-2.5 py-2.5">Cold Drinks</th>
-              <th className="px-2.5 py-2.5">Price</th>
-              <th className="px-2.5 py-2.5">Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            {coldArray.map((item, index) => (
-              <tr key={index}>
-                <td className="px-2.5 py-2.5">{item.name}</td>
-                <td className="px-2.5 py-2.5">{item.price}</td>
-                <td className="px-2.5 py-2.5">{item.type}</td>
-              </tr>
-            ))}
-          </tbody>
-          <thead className='bg-gray-500'>
-            <tr>
-              <th className="px-2.5 py-2.5">Atıştırmalıklar</th>
-              <th className="px-2.5 py-2.5">Price</th>
-              <th className="px-2.5 py-2.5">Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            {snacksArray.map((item, index) => (
-              <tr key={index}>
-                <td className="px-2.5 py-2.5">{item.name}</td>
-                <td className="px-2.5 py-2.5">{item.price}</td>
-                <td className="px-2.5 py-2.5">{item.type}</td>
-              </tr>
-            ))}
-          </tbody>
-          <thead className='bg-gray-500'>
-            <tr>
-              <th className="px-2.5 py-2.5">Sıcak İçecekler</th>
-              <th className="px-2.5 py-2.5">Price</th>
-              <th className="px-2.5 py-2.5">Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            {hotArray.map((item, index) => (
-              <tr key={index}>
-                <td className="px-2.5 py-2.5">{item.name}</td>
-                <td className="px-2.5 py-2.5">{item.price}</td>
-                <td className="px-2.5 py-2.5">{item.type}</td>
-              </tr>
-            ))}
-          </tbody>
-          <thead className='bg-gray-500'>
-            <tr>
-              <th className="px-2.5 py-2.5">Soğuk Kahveler</th>
-              <th className="px-2.5 py-2.5">Price</th>
-              <th className="px-2.5 py-2.5">Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            {coldCoffeeArray.map((item, index) => (
-              <tr key={index}>
-                <td className="px-2.5 py-2.5">{item.name}</td>
-                <td className="px-2.5 py-2.5">{item.price}</td>
-                <td className="px-2.5 py-2.5">{item.type}</td>
-              </tr>
-            ))}
-          </tbody>
-          <thead className='bg-gray-500'>
-            <tr>
-              <th className="px-2.5 py-2.5">Aromatik Çaylar</th>
-              <th className="px-2.5 py-2.5">Price</th>
-              <th className="px-2.5 py-2.5">Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            {aromaticArray.map((item, index) => (
-              <tr key={index}>
-                <td className="px-2.5 py-2.5">{item.name}</td>
-                <td className="px-2.5 py-2.5">{item.price}</td>
-                <td className="px-2.5 py-2.5">{item.type}</td>
-              </tr>
-            ))}
-          </tbody>
-          
-        </table>
+        ))}
+    </tbody>
+</table>
+
+          </div>
+        ))}
+        {/* Render if no data available */}
+        {!isArray && (
+          <div className="text-center py-4">No data available</div>
+        )}
       </div>
     </div>
   );

@@ -14,6 +14,12 @@ import NotFound from './pages/NotFound.jsx/'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useDispatch } from 'react-redux'
 import axios from 'axios'
+import Admin from './pages/Admin.jsx'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+import PrivateRoute from './pages/PrivateRoute.jsx'
+import { AuthProvider } from './pages/AuthProvider.jsx'
+
 
 
 
@@ -23,7 +29,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
      axios
-       .get("https://65c91b40a4fbc162e1129cfa.mockapi.io/api/v1/data")
+       .get("https://6646fe9151e227f23ab09393.mockapi.io/api/v1/equinoxmenu")
        
 
        .then((res) => dispatch({
@@ -38,38 +44,27 @@ function App() {
   },[]);
 
   if(loading){
-    return <p>BEKLE BABBA...</p>
+    return <p>Welcome To Equinox Coffee ...</p>
   }
 
   return (
     <div className='bg-slate-800'>
-      <Switch>
-        <Route path="/" exact >
-          <Main />
-        </Route>
-        <Route path="/Login" exact>
-          <Login />
-        </Route>
-        <Route path="/iletisim" exact>
-          <İletisim />
-        </Route>
-        <Route path="/Hakkimizda" exact>
-          <Hakkimizda />
-        </Route>
-        <Route path="/Menu" exact>
-          <Menu />
-        </Route>
-        <Route path="/Siparis" exact>
-          <Siparis />
-        </Route>
-        <Route path="/Coffee" exact>
-          <Coffee />
-        </Route>
-        <Route path="/MenuListItem" exact>
-          <MenuListItem />
-        </Route>
-        
-      </Switch>
+            <ToastContainer position="top-right" autoClose={5000} />
+            <AuthProvider>
+
+            <Switch>
+          <Route path="/" exact component={Main} />
+          <Route path="/login" exact component={Login} />
+          <PrivateRoute path="/admin" exact component={Admin} />
+          <Route path="/iletisim" exact component={İletisim} />
+          <Route path="/hakkimizda" exact component={Hakkimizda} />
+          <Route path="/menu" exact component={Menu} />
+          <Route path="/siparis" exact component={Siparis} />
+          <Route path="/coffee" exact component={Coffee} />
+          <Route path="/menulistitem" exact component={MenuListItem} />
+          <Route component={NotFound} />
+        </Switch>
+ </AuthProvider>
     </div>
   )
 }
